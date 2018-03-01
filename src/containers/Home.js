@@ -28,27 +28,42 @@ const Headline = system ({
   textAlign: 'left'
 })
 
-const SubHeadline = system ({
-  lineHeight: 1,
-  color: 'purple',
-  fontSize: 2,
-  is: 'div',
-  fontFamily: 'Muli',
+const Field = system ({
+  fontSize: 1,
   fontWeight: 'xbold',
-  m: 0
+  lineHeight: 3,
+  m: 0,
+  p: 0,
+  pl: 4,
+  color: 'blue',
+  bg: 'white',
+  borderRadius: 2,
+  border: 2,
+  borderColor: 'blue',
+  is: 'button',
+  width: '80%',
+  textAlign: 'left',
+  display: 'inline-block'
 })
 
-const SubHeadlineLink = system ({
-  color: 'blue',
-  is: 'a',
-  lineHeight: 1,
-  fontSize: 2,
-  fontFamily: 'Muli',
+const Wager = system ({
+  is: 'input',
+  type: 'text',
+  lineHeight: 3,
+  fontSize: 1,
   fontWeight: 'xbold',
-  hover: {
-    textDecoration: 'underline',
-    color: 'red'
-  },
+  p: 0,
+  pl: 4,
+  ml: 6,
+  m:0,
+  width: '11%',
+  border: 2,
+  borderColor: 'gray.3',
+  boxShadow: 1,
+  borderRadius: 2,
+  color: 'inherit',
+  bg: 'transparent',
+  display: 'inline-block'
 })
 
 const Body = system ({
@@ -65,9 +80,8 @@ const Label = system ({
   color: 'blue',
   mt: 3,
   mb: 3,
-  fontFamily: 'Muli',
   fontWeight: 'xbold',
-  textAlign: 'right',
+  textAlign: 'left',
   display: 'block'
 })
 
@@ -80,6 +94,27 @@ const Badge = system ({
   p: 3,
   borderRadius: 2,
   mr: 4
+})
+
+const Bar = system ({
+  bg: 'blue',
+  width: '50%',
+  lineHeight: 3,
+  color: 'white',
+  fontSize: 3,
+  is: 'div',
+  fontFamily: 'Muli',
+  fontWeight: 'xbold',
+  m: 0,
+  pl: 4,
+  display: 'inline-block'
+})
+
+const Emoji = system ({
+  lineHeight: 3,
+  fontSize: 3,
+  display: 'inline-block',
+  pl: 4
 })
 
 const Box = system ({
@@ -95,61 +130,41 @@ const Image = system ({
 export default withSiteData(() => (
   <div>
     <Grid columns={8} gap="32px">
-      <Cell>
-        <Box>
-          <Image src={logoImg}/>
-        </Box>
+      <Cell width={4}>
+        <Wordmark display='inline-block' lineHeight={3} pt={0} color='blue' fontWeight='xbold' fontSize={4}>DO-ETH</Wordmark>
+        <Label pt={4} textAlign='left'>Just Do Eth</Label>
       </Cell>
-      <Cell width={6}>
-        <Wordmark display='inline-block' lineHeight={3} pt={0} color='blue' fontWeight='xbold' fontSize={4}>qurb</Wordmark>
-        <Label pt={4} textAlign='left'>Spend Smart, Save Tomorrow</Label>
+      <Cell width={4}>
       </Cell>
-      <Cell top={2}>
-        <Label>INTRO</Label>
+      <Cell top={2} width={3}>
+        <Headline pt={0}>§1: Which ivy beats out others?</Headline>
       </Cell>
-      <Cell left={2} width={6}>
-        <Body fontSize={2} lineHeight={2} mt={0}>A repository of publicly available financial resources <br/> to get you started on the road to financial awareness.</Body>
+      <Cell left={7} width={2}>
+        <Label pt={0}>Legalese: Pollstn is an ethereum based demo intended to show how contracts work.</Label>
       </Cell>
-      <Cell top={3}>
-        <Label>02.19.18</Label>
-        <Headline textAlign='right' pt={0} color='gray.3'>§1</Headline>
+      <Cell top={3} width={3}>
+        <Field pt={0}>Princeton</Field><Wager placeholder='1'/>
       </Cell>
-      <Cell width={5}>
-        <SubHeadlineLink href='http://medium.com' fontSize={3} lineHeight={2}>Why being a woman founder is like being dirt poor</SubHeadlineLink>
-        <Body mb={4}>If you’ve ever been to the home of someone who is struggling financially…</Body>
-        <Badge>Work</Badge>
-        <Badge>Opinion</Badge>
-        <Label m={3} display='inline-block' textAlign='left'>medium.com</Label>
+      <Cell left={4} width={3}>
+        <Bar width="25%" pt={0}>25</Bar><Emoji> 🚣🏼</Emoji>
       </Cell>
-      <Cell width={2}>
-        <img/>
+      <Cell top={4} width={3}>
+        <Field pt={0}>Yale</Field><Wager placeholder='1'/>
       </Cell>
-      <Cell top={4}>
-        <Label>QURBED</Label>
+      <Cell left={4} width={3}>
+        <Bar width="20%" pt={0}>20</Bar><Emoji> 🚣🏼</Emoji>
       </Cell>
-      <Cell width={3}>
-        <SubHeadline>Happiness is Irrational</SubHeadline>
-        <Body>You are already designed to be unhappy.</Body>
-        <Label textAlign='left'>medium.com</Label>
-        <SubHeadline mt={6}>Happiness is Irrational</SubHeadline>
-        <Body>You are already designed to be unhappy.</Body>
-        <Label textAlign='left'>medium.com</Label>
+      <Cell top={5} width={3}>
+        <Field pt={0}>Harvard</Field><Wager placeholder='1'/>
       </Cell>
-      <Cell>
-        <Label>CONSUMERISM</Label>
+      <Cell left={4} width={3}>
+        <Bar width="35%" pt={0}>35</Bar><Emoji> 🚣🏼</Emoji>
       </Cell>
-      <Cell width={3}>
-        <SubHeadline>Your Lifestyle Has Already Been Designed</SubHeadline>
-        <Body>We've been led into a culture that has been engineered to leave us tired, hungry for indulgence.</Body>
-        <Label textAlign='left'>raptitude.com</Label>
+      <Cell top={6} width={3}>
+        <Field pt={0}>MIT</Field><Wager placeholder='1'/>
       </Cell>
-      <Cell top={5}>
-        <Label>ENDLESS</Label>
-      </Cell>
-      <Cell width={3}>
-        <SubHeadline>Happiness is Irrational</SubHeadline>
-        <Body>You are already designed to be unhappy.</Body>
-        <Label textAlign='left'>medium.com</Label>
+      <Cell left={4} width={3}>
+        <Bar width="20%" pt={0}>20</Bar><Emoji> 🚣🏼</Emoji>
       </Cell>
     </Grid>
   </div>

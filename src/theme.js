@@ -40,7 +40,7 @@ const lineHeights = [
 
 const fontWeights = {
   normal: 500,
-  xbold: 800
+  xbold: 900
 }
 
 const letterSpacings = {

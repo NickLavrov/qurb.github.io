@@ -8,6 +8,7 @@ export default {
   }),
   getRoutes: async () => {
     const { data: posts } = await axios.get('https://jsonplaceholder.typicode.com/posts')
+    const { data: polls } = await axios.get('https://jsonplaceholder.typicode.com/posts')
     return [
       {
         path: '/',
@@ -28,6 +29,20 @@ export default {
           component: 'src/containers/Post',
           getData: () => ({
             post,
+          }),
+        })),
+      },
+      {
+        path: '/polls',
+        component: 'src/containers/Polls',
+        getData: () => ({
+          polls,
+        }),
+        children: polls.map(poll => ({
+          path: `/poll/${poll.id}`,
+          component: 'src/containers/Poll',
+          getData: () => ({
+            poll,
           }),
         })),
       },

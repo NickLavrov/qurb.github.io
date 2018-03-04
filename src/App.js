@@ -7,6 +7,7 @@ import Routes from 'react-static-routes'
 import { ThemeProvider } from 'styled-components'
 import theme from 'theme'
 import XRay from 'react-x-ray'
+import Web3 from 'web3'
 
 injectGlobal`
 html, body, div, span, applet, object, iframe,
@@ -87,8 +88,7 @@ const App = () => (
       </AppStyles>
       {/* </XRay> */}
     </Router>
-</ThemeProvider>
-
+  </ThemeProvider>
 )
 
 export default hot(module)(App)

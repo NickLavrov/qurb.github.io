@@ -1,9 +1,11 @@
 import React from 'react'
 import { withSiteData } from 'react-static'
+import {Card} from 'rebass'
+import { Grid, Cell } from 'styled-css-grid'
+
 import styled from 'styled-components'
 import { space, fontSize, fontWeight, color, lineHeight, fontFamily, display} from 'styled-system'
 import system from 'system-components'
-import { Grid, Cell } from 'styled-css-grid'
 
 import logoImg from '../logo.svg'
 
@@ -14,7 +16,7 @@ const Wordmark = system ({
   fontWeight: 'xbold',
   color: 'blue',
   display: 'block',
-  fontFamily: 'Muli'
+  fontFamily: 'Poppins'
 })
 
 const Headline = system ({
@@ -23,7 +25,7 @@ const Headline = system ({
   color: 'purple',
   fontSize: 4,
   is: 'div',
-  fontFamily: 'Muli',
+  fontFamily: 'Poppins',
   fontWeight: 'xbold',
   textAlign: 'left'
 })
@@ -35,15 +37,20 @@ const Field = system ({
   m: 0,
   p: 0,
   pl: 4,
-  color: 'blue',
+  color: 'gray.1',
   bg: 'white',
   borderRadius: 2,
   border: 2,
   borderColor: 'blue',
-  is: 'button',
-  width: '80%',
+  is: 'a',
+  width: '75%',
   textAlign: 'left',
-  display: 'inline-block'
+  display: 'inline-block',
+  hover: {
+    background: 'blue',
+    textDecoration: 'underline',
+    color: 'white',
+  },
 })
 
 const Wager = system ({
@@ -103,7 +110,7 @@ const Bar = system ({
   color: 'white',
   fontSize: 3,
   is: 'div',
-  fontFamily: 'Muli',
+  fontFamily: 'Poppins',
   fontWeight: 'xbold',
   m: 0,
   pl: 4,
@@ -131,19 +138,21 @@ export default withSiteData(() => (
   <div>
     <Grid columns={8} gap="32px">
       <Cell width={4}>
-        <Wordmark display='inline-block' lineHeight={3} pt={0} color='blue' fontWeight='xbold' fontSize={4}>DO-ETH</Wordmark>
+        <Wordmark display='inline-block' lineHeight={3} pt={0} color='blue' fontWeight='xbold' fontSize={4}>DOETH</Wordmark>
         <Label pt={4} textAlign='left'>Just Do Eth</Label>
       </Cell>
       <Cell width={4}>
       </Cell>
-      <Cell top={2} width={3}>
-        <Headline pt={0}>§1: Which ivy beats out others?</Headline>
+      <Cell top={2} width={6}>
+        <Headline pt={0}>Which ivy beats out others?</Headline>
+        <Body>This week we’re trying to determine which ivy league school is ranked best according to the crypto community.
+Push your 🚣🏼 across the finish line.</Body>
       </Cell>
       <Cell left={7} width={2}>
         <Label pt={0}>Legalese: Pollstn is an ethereum based demo intended to show how contracts work.</Label>
       </Cell>
       <Cell top={3} width={3}>
-        <Field pt={0}>Princeton</Field><Wager placeholder='1'/>
+        <Field pt={0} href="">Princeton</Field><Wager placeholder='1'/>
       </Cell>
       <Cell left={4} width={3}>
         <Bar width="25%" pt={0}>25</Bar><Emoji> 🚣🏼</Emoji>
